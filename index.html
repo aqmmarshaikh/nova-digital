@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <title>Ultimate Digital Growth Kit | Modern Digital Product Landing Page</title>
+  <meta
+    name="description"
+    content="Sell your digital product with a modern responsive landing page featuring a clean hero section, product details, pricing, FAQs, and a Google Forms-style order form."
+  />
+  <meta
+    name="keywords"
+    content="digital product, landing page, order form, ecommerce, responsive website, digital download, instant delivery"
+  />
+  <meta name="theme-color" content="#6d5efc" />
+  <style>
+    :root {
+      --bg: #f6f8ff;
+      --bg-soft: #eef3ff;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: rgba(255, 255, 255, 0.96);
+      --text: #111827;
+      --text-soft: #5b6478;
+      --border: rgba(17, 24, 39, 0.08);
+      --shadow: 0 18px 60px rgba(47, 63, 129, 0.12);
+      --shadow-lg: 0 24px 80px rgba(47, 63, 129, 0.18);
+      --accent: #6d5efc;
+      --accent-2: #00c2ff;
+      --accent-3: #14d990;
+      --accent-4: #ff7ac3;
+      --danger: #ff6b6b;
+      --warning: #ffb347;
+      --success: #0fbf84;
+      --ring: rgba(109, 94, 252, 0.16);
+      --glass: blur(16px);
+      --radius: 22px;
+      --radius-sm: 16px;
+      --header-h: 80px;
+    }
+
+    body[data-theme="dark"] {
+      --bg: #090d17;
+      --bg-soft: #101726;
+      --surface: rgba(16, 23, 38, 0.72);
+      --surface-strong: rgba(17, 24, 39, 0.9);
+      --text: #f4f7ff;
+      --text-soft: #aab3c8;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 26px 90px rgba(0, 0, 0, 0.42);
+      --ring: rgba(109, 94, 252, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(109, 94, 252, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(0, 194, 255, 0.16), transparent 22%),
+        radial-gradient(circle at 50% 85%, rgba(20, 217, 144, 0.12), transparent 24%),
+        linear-gradient(180deg, var(--bg), var(--bg-soft));
+      min-height: 100vh;
+      padding-bottom: 104px;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    ::selection {
+      background: rgba(109, 94, 252, 0.22);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 84px 0;
+      position: relative;
+    }
+
+    .section-title-wrap {
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(109, 94, 252, 0.12), rgba(0, 194, 255, 0.12));
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 16px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      margin: 0 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .section p.lead {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: var(--glass);
+      -webkit-backdrop-filter: var(--glass);
+      box-shadow: var(--shadow);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn:focus-visible,
+    .nav-link:focus-visible,
+    .icon-btn:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    .faq summary:focus-visible,
+    .upload-box:focus-within {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--ring);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), #836fff 55%, var(--accent-2));
+      box-shadow: 0 14px 34px rgba(109, 94, 252, 0.32);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 18px 42px rgba(109, 94, 252, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--surface-strong);
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(20, 217, 144, 0.12);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      padding-top: 14px;
+    }
+
+    .nav-shell {
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-radius: 24px;
+      padding: 14px 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      box-shadow: 0 10px 28px rgba(109, 94, 252, 0.28);
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.84rem;
+      color: var(--text-soft);
+    }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-link {
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: var(--text-soft);
+      font-weight: 600;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(109, 94, 252, 0.1);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .icon-btn,
+    .menu-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface-strong);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .icon-btn:hover,
+    .menu-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.15rem;
+    }
+
+    .hero {
+      padding-top: 34px;
+      padding-bottom: 66px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin: 0 0 18px;
+      max-width: 11ch;
+    }
+
+    .hero-copy p {
+      font-size: 1.08rem;
+      line-height: 1.78;
+      color: var(--text-soft);
+      margin: 0 0 24px;
+      max-width: 60ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      color: var(--text-soft);
+      font-size: 0.96rem;
+    }
+
+    .hero-metrics strong {
+      color: var(--text);
+      font-size: 1rem;
+      margin-right: 4px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .banner {
+      position: relative;
+      border-radius: 32px;
+      padding: 24px;
+      overflow: hidden;
+      min-height: 520px;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 25%),
+        linear-gradient(145deg, rgba(109, 94, 252, 0.28), rgba(0, 194, 255, 0.2) 45%, rgba(20, 217, 144, 0.14));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .banner::before,
+    .banner::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(20px);
+      opacity: 0.75;
+      z-index: 0;
+    }
+
+    .banner::before {
+      width: 180px;
+      height: 180px;
+      background: rgba(109, 94, 252, 0.35);
+      right: -30px;
+      top: -20px;
+    }
+
+    .banner::after {
+      width: 140px;
+      height: 140px;
+      background: rgba(0, 194, 255, 0.28);
+      left: -20px;
+      bottom: 10px;
+    }
+
+    .banner-topbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .banner-window {
+      position: relative;
+      z-index: 2;
+      height: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .banner-window span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.68);
+    }
+
+    .product-mockup {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 18px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+
+    .product-cover {
+      border-radius: 28px;
+      padding: 24px;
+      min-height: 332px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04)),
+        linear-gradient(145deg, rgba(109, 94, 252, 0.9), rgba(0, 194, 255, 0.78));
+      color: white;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 20px 50px rgba(15, 20, 45, 0.24);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cover-badge {
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .cover-icon {
+      width: 78px;
+      height: 78px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.16);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .product-cover h3 {
+      margin: 0 0 8px;
+      font-size: 1.9rem;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .product-cover p {
+      margin: 0;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .mockup-panels {
+      display: grid;
+      gap: 16px;
+    }
+
+    .panel {
+      border-radius: 22px;
+      padding: 18px;
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      min-height: 104px;
+    }
+
+    .panel h4 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--text-soft);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .bars {
+      display: flex;
+      align-items: end;
+      gap: 10px;
+      height: 82px;
+      margin-top: 8px;
+    }
+
+    .bars span {
+      flex: 1;
+      border-radius: 12px 12px 6px 6px;
+      background: linear-gradient(180deg, var(--accent-2), var(--accent));
+      opacity: 0.9;
+    }
+
+    .bars span:nth-child(1) { height: 36%; }
+    .bars span:nth-child(2) { height: 58%; }
+    .bars span:nth-child(3) { height: 78%; }
+    .bars span:nth-child(4) { height: 46%; }
+    .bars span:nth-child(5) { height: 92%; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(109, 94, 252, 0.1);
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .float-card {
+      position: absolute;
+      border-radius: 18px;
+      padding: 14px 16px;
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      z-index: 3;
+      min-width: 180px;
+      animation: bob 4.4s ease-in-out infinite;
+    }
+
+    .float-card small {
+      display: block;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .float-card strong {
+      display: block;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .float-card.one {
+      top: 86px;
+      right: -12px;
+    }
+
+    .float-card.two {
+      left: -16px;
+      bottom: 34px;
+      animation-delay: -2.2s;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .feature-card,
+    .benefit-card,
+    .step-card,
+    .contact-card,
+    .pricing-card,
+    .preview-card,
+    .side-card,
+    .faq details {
+      border-radius: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--glass);
+      -webkit-backdrop-filter: var(--glass);
+    }
+
+    .feature-card,
+    .benefit-card,
+    .step-card,
+    .contact-card,
+    .pricing-card,
+    .side-card {
+      padding: 24px;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+
+    .list li .check {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(20, 217, 144, 0.12);
+      color: var(--success);
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .benefit-card h3,
+    .feature-card h3,
+    .pricing-card h3,
+    .side-card h3,
+    .contact-card h3,
+    .step-card h3 {
+      margin: 0 0 10px;
+      letter-spacing: -0.03em;
+      font-size: 1.2rem;
+    }
+
+    .benefit-card p,
+    .feature-card p,
+    .contact-card p,
+    .step-card p,
+    .side-card p {
+      margin: 0;
+      color: var(--text-soft);
+      line-height: 1.72;
+    }
+
+    .icon-bubble {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(109, 94, 252, 0.16), rgba(0, 194, 255, 0.16));
+      border: 1px solid var(--border);
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .preview-card {
+      padding: 16px;
+      min-height: 230px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .preview-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .preview-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      letter-spacing: -0.02em;
+    }
+
+    .preview-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .preview-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(127, 143, 170, 0.5);
+    }
+
+    .ui-card {
+      border-radius: 20px;
+      padding: 16px;
+      min-height: 170px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), transparent),
+        linear-gradient(180deg, rgba(109, 94, 252, 0.08), rgba(0, 194, 255, 0.04));
+      border: 1px solid var(--border);
+    }
+
+    .ui-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .ui-block {
+      flex: 1;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(109, 94, 252, 0.8), rgba(0, 194, 255, 0.4));
+      opacity: 0.8;
+    }
+
+    .ui-block.short { flex: 0.5; }
+    .ui-block.tiny { flex: 0.32; }
+    .ui-panel {
+      margin-top: 14px;
+      height: 78px;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(109, 94, 252, 0.16), rgba(20, 217, 144, 0.14)),
+        rgba(255,255,255,0.03);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ui-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto 12px 12px;
+      height: 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(0,194,255,0.8), rgba(109,94,252,0.7));
+      opacity: 0.76;
+    }
+
+    .pricing-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .pricing-card.highlight {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card.highlight::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .offer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 179, 71, 0.12);
+      border: 1px solid var(--border);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #ff8b36;
+      box-shadow: 0 0 0 0 rgba(255, 139, 54, 0.5);
+      animation: pulse 1.9s infinite;
+    }
+
+    .price-line {
+      display: flex;
+      align-items: end;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 6px 0 12px;
+    }
+
+    .price-now {
+      font-size: clamp(2.7rem, 5vw, 4rem);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .price-old {
+      color: var(--text-soft);
+      text-decoration: line-through;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .price-save {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(20, 217, 144, 0.14);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 0.92rem;
+      border: 1px solid var(--border);
+    }
+
+    .pricing-features {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .pricing-features .item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+
+    .pricing-note {
+      margin-top: 18px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      box-shadow: 0 12px 28px rgba(109, 94, 252, 0.25);
+    }
+
+    .order-wrap {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .form-shell {
+      padding: 24px;
+      border-radius: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: var(--glass);
+      -webkit-backdrop-filter: var(--glass);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .form-head {
+      margin-bottom: 18px;
+    }
+
+    .form-head h3 {
+      margin: 0 0 6px;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .form-head p {
+      margin: 0;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .question {
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+    }
+
+    .question label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .required {
+      color: var(--danger);
+      margin-left: 4px;
+    }
+
+    .field,
+    .textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid rgba(127, 143, 170, 0.25);
+      background: transparent;
+      color: var(--text);
+      padding: 12px 0 10px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .field::placeholder,
+    .textarea::placeholder {
+      color: color-mix(in srgb, var(--text-soft) 82%, transparent);
+    }
+
+    .field:focus,
+    .textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .upload-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1.5px dashed rgba(109, 94, 252, 0.34);
+      background: linear-gradient(135deg, rgba(109, 94, 252, 0.06), rgba(0, 194, 255, 0.04));
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .upload-box:hover {
+      transform: translateY(-1px);
+      border-color: rgba(109, 94, 252, 0.58);
+    }
+
+    .upload-box input[type="file"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+    }
+
+    .upload-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(109, 94, 252, 0.12);
+      font-size: 1.35rem;
+      flex: 0 0 auto;
+    }
+
+    .upload-copy strong {
+      display: block;
+      margin-bottom: 5px;
+      letter-spacing: -0.02em;
+    }
+
+    .upload-copy span {
+      display: block;
+      color: var(--text-soft);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .form-footnote {
+      color: var(--text-soft);
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(20, 217, 144, 0.12);
+      border: 1px solid rgba(20, 217, 144, 0.28);
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: rise 0.35s ease;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+
+    .mini-item b {
+      color: var(--text);
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq details {
+      overflow: hidden;
+    }
+
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary .arrow {
+      transition: transform 0.24s ease;
+      color: var(--text-soft);
+      flex: 0 0 auto;
+    }
+
+    .faq details[open] summary .arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-content {
+      padding: 0 24px 22px;
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .contact-meta {
+      margin-top: 14px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 24px 0 130px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .sticky-buy {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 80;
+      border-radius: 24px;
+      padding: 12px;
+      background: color-mix(in srgb, var(--surface-strong) 92%, transparent);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .sticky-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .sticky-copy {
+      min-width: 0;
+    }
+
+    .sticky-copy strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sticky-copy span {
+      display: block;
+      color: var(--text-soft);
+      font-size: 0.92rem;
+    }
+
+    .floating-chat {
+      position: fixed;
+      right: 18px;
+      bottom: 96px;
+      z-index: 81;
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #25d366, #12b886);
+      color: white;
+      font-size: 1.55rem;
+      box-shadow: 0 18px 34px rgba(18, 184, 134, 0.32);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .floating-chat:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 22px 42px rgba(18, 184, 134, 0.42);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+      white-space: nowrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 139, 54, 0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(255, 139, 54, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 139, 54, 0); }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .pricing-wrap,
+      .order-wrap,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1 {
+        max-width: 14ch;
+      }
+
+      .hero-visual {
+        min-height: auto;
+      }
+
+      .banner {
+        min-height: auto;
+      }
+
+      .benefits-grid,
+      .preview-grid,
+      .step-grid,
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .menu-btn {
+        display: grid;
+      }
+
+      .nav-main {
+        position: fixed;
+        top: calc(var(--header-h) + 18px);
+        left: 1rem;
+        right: 1rem;
+        border-radius: 24px;
+        padding: 16px;
+        background: color-mix(in srgb, var(--surface-strong) 94%, transparent);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .site-header.menu-open .nav-main {
+        display: flex;
+        animation: rise 0.24s ease;
+      }
+
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-link {
+        width: 100%;
+        text-align: left;
+        padding: 14px;
+        background: transparent;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 4px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding-bottom: 112px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        padding-top: 22px;
+      }
+
+      .product-mockup {
+        grid-template-columns: 1fr;
+      }
+
+      .float-card.one {
+        right: 10px;
+        top: 16px;
+      }
+
+      .float-card.two {
+        left: 10px;
+        bottom: 14px;
+      }
+
+      .benefits-grid,
+      .preview-grid,
+      .step-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sticky-inner {
+        flex-wrap: wrap;
+      }
+
+      .sticky-inner .btn {
+        width: 100%;
+      }
+
+      .hero-actions .btn,
+      .contact-card .btn,
+      .pricing-card .btn,
+      .side-card .btn {
+        width: 100%;
+      }
+
+      .floating-chat {
+        right: 16px;
+        bottom: 118px;
+        width: 56px;
+        height: 56px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Ultimate Digital Growth Kit",
+      "description": "A premium bundle of templates, strategy guides, marketing assets, and digital resources for creators, freelancers, and online businesses.",
+      "brand": {
+        "@type": "Brand",
+        "name": "NovaDigital"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "29.00",
+        "availability": "https://schema.org/InStock",
+        "category": "Digital Product"
+      }
+    }
+  </script>
+</head>
+<body data-theme="dark">
+  <header class="site-header" id="top">
+    <div class="container">
+      <div class="nav-shell glass">
+        <a href="#home" class="brand" aria-label="NovaDigital home">
+          <div class="brand-mark">✨</div>
+          <div class="brand-text">
+            <strong>NovaDigital</strong>
+            <span>Premium digital products</span>
+          </div>
+        </a>
+
+        <button class="menu-btn" id="menuToggle" aria-expanded="false" aria-controls="navMenu">
+          ☰
+          <span class="sr-only">Toggle menu</span>
+        </button>
+
+        <div class="nav-main" id="navMenu">
+          <nav class="nav-links" aria-label="Primary navigation">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#details">Product</a>
+            <a class="nav-link" href="#pricing">Pricing</a>
+            <a class="nav-link" href="#how-it-works">How It Works</a>
+            <a class="nav-link" href="#order">Order Form</a>
+            <a class="nav-link" href="#faq">FAQ</a>
+            <a class="nav-link" href="#contact">Contact</a>
+          </nav>
+
+          <div class="nav-actions">
+            <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+            <a href="#order" class="btn btn-primary buy-scroll" data-product="Ultimate Digital Growth Kit">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">🚀 Best-selling digital bundle for creators & businesses</div>
+          <h1>Sell smarter with the <span class="gradient-text">Ultimate Digital Growth Kit</span></h1>
+          <p>
+            Get a polished set of ready-to-use digital assets including templates, launch resources, strategy notes,
+            and bonus tools designed to help you save time, improve branding, and launch faster.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#order" class="btn btn-primary buy-scroll" data-product="Ultimate Digital Growth Kit">Buy Now →</a>
+            <a href="#details" class="btn btn-secondary">See Product Details</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">⚡ Instant Delivery</div>
+            <div class="trust-item">🔒 Secure Payment</div>
+            <div class="trust-item">📩 Digital Download</div>
+          </div>
+
+          <div class="hero-metrics">
+            <span><strong>1,200+</strong> happy buyers</span>
+            <span><strong>4.9/5</strong> average satisfaction</span>
+            <span><strong>24/7</strong> order collection</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="banner">
+            <div class="banner-topbar">
+              <div class="banner-window" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <span>Professional Digital Product Preview</span>
+            </div>
+
+            <div class="product-mockup">
+              <div class="product-cover">
+                <div class="cover-badge">Top Rated Bundle</div>
+                <div>
+                  <div class="cover-icon">📦</div>
+                  <h3>Ultimate Digital Growth Kit</h3>
+                  <p>Templates • Guides • Bonuses • Instant access</p>
+                </div>
+                <div class="chips">
+                  <span class="chip">Brand Pack</span>
+                  <span class="chip">Launch Plan</span>
+                  <span class="chip">Editable</span>
+                </div>
+              </div>
+
+              <div class="mockup-panels">
+                <div class="panel">
+                  <h4>What’s inside</h4>
+                  <p>Ready-made files, launch templates, checklists, workflow sheets, and promotional resources.</p>
+                </div>
+
+                <div class="panel">
+                  <h4>Performance-ready toolkit</h4>
+                  <div class="bars" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+
+                <div class="panel">
+                  <h4>Perfect for</h4>
+                  <p>Freelancers, content creators, coaches, digital sellers, online shops, and side hustlers.</p>
+                </div>
+              </div>
+            </div>
+
+          
+
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <div class="eyebrow">📘 Product Details</div>
+          <h2>Everything you need to launch, market, and deliver your digital product professionally</h2>
+          <p class="lead">
+            This all-in-one digital bundle is crafted to help creators and businesses present their products more
+            clearly, save time on setup, and convert visitors into customers with a polished experience.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="feature-card reveal">
+            <div class="icon-bubble">🧩</div>
+            <h3>What the digital product is</h3>
+            <p>
+              The Ultimate Digital Growth Kit is a downloadable resource pack that combines premium templates,
+              marketing frameworks, launch assets, and practical guides into one organized package.
+            </p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Editable templates for product pages, promotions, and customer messaging</span></li>
+              <li><span class="check">✓</span><span>Simple strategies to improve presentation, trust, and conversions</span></li>
+              <li><span class="check">✓</span><span>Organized files that are easy to customize for your own brand or product</span></li>
+              <li><span class="check">✓</span><span>Suitable for creators, freelancers, agencies, and digital sellers</span></li>
+            </ul>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="icon-bubble">🌟</div>
+            <h3>Key benefits</h3>
+            <p>
+              Instead of building everything from scratch, you get a refined set of reusable resources that speed up
+              your workflow and make your digital offer look more trustworthy from day one.
+            </p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Save hours of design and planning work</span></li>
+              <li><span class="check">✓</span><span>Present your product in a modern, high-converting format</span></li>
+              <li><span class="check">✓</span><span>Improve perceived value with premium visuals and structure</span></li>
+              <li><span class="check">✓</span><span>Deliver a smoother buyer experience with ready-to-use assets</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card reveal">
+            <div class="icon-bubble">⚙️</div>
+            <h3>Easy to customize</h3>
+            <p>Designed for quick edits so you can personalize the files and start using them without a giant learning curve.</p>
+          </div>
+
+          <div class="benefit-card reveal">
+            <div class="icon-bubble">📈</div>
+            <h3>Conversion-focused</h3>
+            <p>Built around clarity, trust, and polished presentation to help your offer feel more premium and reliable.</p>
+          </div>
+
+          <div class="benefit-card reveal">
+            <div class="icon-bubble">⚡</div>
+            <h3>Instant digital access</h3>
+            <p>No shipping, no delays, no cardboard boxes plotting against your hallway—just fast digital delivery.</p>
+          </div>
+        </div>
+
+        <div class="preview-grid">
+          <div class="preview-card reveal">
+            <div class="preview-head">
+              <div class="preview-title">Preview 01 — Product Dashboard</div>
+              <div class="preview-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ui-card">
+              <div class="ui-row"><div class="ui-block"></div><div class="ui-block short"></div></div>
+              <div class="ui-row"><div class="ui-block"></div><div class="ui-block tiny"></div></div>
+              <div class="ui-panel"></div>
+            </div>
+          </div>
+
+          <div class="preview-card reveal">
+            <div class="preview-head">
+              <div class="preview-title">Preview 02 — Marketing Assets</div>
+              <div class="preview-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ui-card">
+              <div class="ui-row"><div class="ui-block short"></div><div class="ui-block"></div></div>
+              <div class="ui-row"><div class="ui-block tiny"></div><div class="ui-block"></div></div>
+              <div class="ui-panel" style="background: linear-gradient(135deg, rgba(255,122,195,0.18), rgba(109,94,252,0.14));"></div>
+            </div>
+          </div>
+
+          <div class="preview-card reveal">
+            <div class="preview-head">
+              <div class="preview-title">Preview 03 — Launch Flow</div>
+              <div class="preview-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            </div>
+            <div class="ui-card">
+              <div class="ui-row"><div class="ui-block"></div><div class="ui-block"></div></div>
+              <div class="ui-row"><div class="ui-block short"></div><div class="ui-block tiny"></div></div>
+              <div class="ui-panel" style="background: linear-gradient(135deg, rgba(20,217,144,0.16), rgba(0,194,255,0.12));"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <div class="eyebrow">💸 Pricing</div>
+          <h2>Premium value at a limited-time launch price</h2>
+          <p class="lead">
+            Clear, simple pricing with a temporary promotional discount for early buyers. Secure your copy today and
+            get instant digital delivery after payment confirmation.
+          </p>
+        </div>
+
+        <div class="pricing-wrap">
+          <div class="pricing-card highlight reveal">
+            <div class="offer-badge"><span class="pulse"></span> Limited Time Offer</div>
+            <h3>Ultimate Digital Growth Kit</h3>
+            <p style="margin:0; color: var(--text-soft); line-height: 1.75;">
+              A premium digital resource bundle for creators, freelancers, and online businesses.
+            </p>
+
+            <div class="price-line">
+              <div class="price-now">&#36;29</div>
+              <div class="price-old">&#36;79</div>
+              <div class="price-save">Save 63%</div>
+            </div>
+
+            <div class="pricing-features">
+              <div class="item">✅ Full digital product bundle included</div>
+              <div class="item">✅ Instant delivery after confirmation</div>
+              <div class="item">✅ Download-ready resources and bonus files</div>
+              <div class="item">✅ Professional, beginner-friendly, and reusable</div>
+            </div>
+
+            <div class="pricing-note">
+              Offer pricing may change without notice. Digital product only — no physical shipment.
+            </div>
+
+            <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:12px;">
+              <a href="#order" class="btn btn-primary buy-scroll" data-product="Ultimate Digital Growth Kit">Get the Offer</a>
+              <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+            </div>
+          </div>
+
+          <div class="side-card reveal">
+            <div class="icon-bubble">🎁</div>
+            <h3>What you get</h3>
+            <p>
+              Your purchase includes the main product files, organized supporting resources, and helpful bonus
+              materials created to make implementation fast and simple.
+            </p>
+
+            <div class="mini-list">
+              <div class="mini-item"><span>📦</span><span><b>Main bundle:</b> Templates, guides, and editable resources</span></div>
+              <div class="mini-item"><span>📝</span><span><b>Bonus assets:</b> Extra support materials and planning tools</span></div>
+              <div class="mini-item"><span>🔐</span><span><b>Secure process:</b> Upload payment screenshot with your order form</span></div>
+              <div class="mini-item"><span>⚡</span><span><b>Fast delivery:</b> Product is sent shortly after confirmation</span></div>
+            </div>
+
+            <div style="margin-top:18px;">
+              <div class="pill">Best for digital sellers, creators, coaches & freelancers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <div class="eyebrow">🛠️ How It Works</div>
+          <h2>A simple 3-step purchase flow</h2>
+          <p class="lead">
+            The buying process is intentionally easy: complete the order form, send your payment, and receive your
+            digital product without unnecessary friction.
+          </p>
+        </div>
+
+        <div class="step-grid">
+          <div class="step-card reveal">
+            <div class="step-num">1</div>
+            <h3>Fill the order form</h3>
+            <p>
+              Enter your full name, email address, WhatsApp number, product name, and any optional message so your
+              order can be processed accurately.
+            </p>
+          </div>
+
+          <div class="step-card reveal">
+            <div class="step-num">2</div>
+            <h3>Make the payment</h3>
+            <p>
+              Complete your payment through your preferred payment method, then upload the payment screenshot as proof
+              inside the order form.
+            </p>
+          </div>
+
+          <div class="step-card reveal">
+            <div class="step-num">3</div>
+            <h3>Receive the product instantly</h3>
+            <p>
+              Once your order is received and payment is confirmed, your digital product is sent to you promptly so you
+              can start using it right away.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="order">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <div class="eyebrow">📝 Order Form</div>
+          <h2>Place your order in a clean Google Forms-style layout</h2>
+          <p class="lead">
+            Complete the form below to purchase the digital product. After submission, you’ll see a confirmation
+            message on this page.
+          </p>
+        </div>
+
+        <div class="order-wrap">
+          <div class="form-shell reveal">
+            <div class="form-head">
+              <h3>Order your digital product</h3>
+              <p>Please fill in the required fields carefully so we can deliver your order correctly.</p>
+            </div>
+
+            <form id="orderForm" novalidate>
+              <div class="question">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input class="field" type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+              </div>
+
+              <div class="question">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input class="field" type="email" id="email" name="email" placeholder="Enter your email address" required />
+              </div>
+
+              <div class="question">
+                <label for="whatsapp">WhatsApp Number <span class="required">*</span></label>
+                <input class="field" type="tel" id="whatsapp" name="whatsapp" placeholder="Enter your WhatsApp number" required />
+              </div>
+
+              <div class="question">
+                <label for="productName">Product Name <span class="required">*</span></label>
+                <input class="field" type="text" id="productName" name="productName" value="Ultimate Digital Growth Kit" required />
+              </div>
+
+              <div class="question" style="position:relative;">
+                <label for="paymentScreenshot">Payment Screenshot Upload <span class="required">*</span></label>
+                <label class="upload-box" for="paymentScreenshot">
+                  <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept=".png,.jpg,.jpeg,.pdf,.webp" required />
+                  <div class="upload-icon">📎</div>
+                  <div class="upload-copy">
+                    <strong>Click to upload payment screenshot</strong>
+                    <span id="fileName">PNG, JPG, WEBP or PDF supported</span>
+                  </div>
+                </label>
+              </div>
+
+              <div class="question">
+                <label for="message">Message <span style="color: var(--text-soft); font-weight: 600;">(optional)</span></label>
+                <textarea class="textarea" id="message" name="message" placeholder="Add any note or detail about your order"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit Order</button>
+                <a href="#contact" class="btn btn-secondary">Need Help?</a>
+              </div>
+
+              <div class="form-footnote">
+                By submitting this form, you confirm that the information provided is accurate and your payment proof is ready for review.
+              </div>
+            </form>
+
+            <div class="success-message" id="successMessage">
+              Thank you! Your order has been received. We will send your product shortly.
+            </div>
+          </div>
+
+          <div class="side-card reveal">
+            <div class="icon-bubble">🔒</div>
+            <h3>Order summary & support</h3>
+            <p>
+              This page collects your order details in a structured, easy-to-process format so delivery can happen
+              smoothly and accurately.
+            </p>
+
+            <div class="mini-list">
+              <div class="mini-item"><span>📩</span><span><b>Delivery channel:</b> Email and optional WhatsApp follow-up</span></div>
+              <div class="mini-item"><span>💳</span><span><b>Payment proof:</b> Upload screenshot to complete your order request</span></div>
+              <div class="mini-item"><span>⏱️</span><span><b>Processing:</b> Orders are reviewed and fulfilled promptly</span></div>
+              <div class="mini-item"><span>🧾</span><span><b>Digital only:</b> No physical shipping required</span></div>
+            </div>
+
+            <div style="margin-top:20px;">
+              <a href="mailto:hello@novadigital.co" class="btn btn-outline" style="width:100%;">Email Support</a>
+            </div>
+
+            <div class="contact-meta">
+              Optional integration note: in a real deployment, this form can be connected to Google Forms, email
+              handling, or a backend endpoint for live submission.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <div class="eyebrow">❓ FAQ</div>
+          <h2>Common questions buyers ask</h2>
+          <p class="lead">
+            Clear answers help reduce hesitation and build trust, so here are the most common questions about payment,
+            delivery, and access.
+          </p>
+        </div>
+
+        <div class="faq">
+          <details class="reveal">
+            <summary>
+              <span>How will I receive the product?</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="faq-content">
+              After your order is submitted and payment is confirmed, the digital product is sent to your provided
+              email address. If needed, you may also be contacted through WhatsApp for delivery follow-up.
+            </div>
+          </details>
+
+          <details class="reveal">
+            <summary>
+              <span>Is payment secure?</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="faq-content">
+              Yes. The page is designed to collect only the information needed to process your order, and your payment
+              screenshot acts as proof for confirmation. In a live deployment, this can be connected to a secure
+              payment workflow.
+            </div>
+          </details>
+
+          <details class="reveal">
+            <summary>
+              <span>Do I get instant access?</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="faq-content">
+              Delivery is intended to be fast after payment confirmation. Since this demo uses a manual confirmation
+              flow, you will receive your product shortly after your submitted order is reviewed.
+            </div>
+          </details>
+
+          <details class="reveal">
+            <summary>
+              <span>Is this a physical product?</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="faq-content">
+              No. This is a digital product only, which means you will receive downloadable files or access details.
+              Nothing will be shipped physically.
+            </div>
+          </details>
+
+          <details class="reveal">
+            <summary>
+              <span>Can I contact support before ordering?</span>
+              <span class="arrow">⌄</span>
+            </summary>
+            <div class="faq-content">
+              Absolutely. Use the WhatsApp, email, or Telegram contact methods below if you have questions before purchasing.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <div class="eyebrow">📞 Contact</div>
+          <h2>Reach out through your preferred channel</h2>
+          <p class="lead">
+            Whether you want to confirm product details, ask pre-sale questions, or request support, you can contact
+            us directly using the options below.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <div class="icon-bubble">💬</div>
+            <h3>WhatsApp</h3>
+            <p>Chat for quick order help, payment questions, or delivery support.</p>
+            <div style="margin-top:18px;">
+              <a class="btn btn-primary" href="https://wa.me/12345678900?text=Hello%20I%20want%20to%20buy%20the%20Ultimate%20Digital%20Growth%20Kit" target="_blank" rel="noopener">Message on WhatsApp</a>
+            </div>
+            <div class="contact-meta">+1 (234) 567-8900</div>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="icon-bubble">📧</div>
+            <h3>Email</h3>
+            <p>Ideal for detailed questions, support requests, and order follow-up.</p>
+            <div style="margin-top:18px;">
+              <a class="btn btn-secondary" href="mailto:hello@novadigital.co">hello@novadigital.co</a>
+            </div>
+            <div class="contact-meta">Replies typically sent through your provided email address.</div>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="icon-bubble">📨</div>
+            <h3>Telegram</h3>
+            <p>Optional contact channel for updates, order help, and quick communication.</p>
+            <div style="margin-top:18px;">
+              <a class="btn btn-outline" href="https://t.me/novadigitalsupport" target="_blank" rel="noopener">Open Telegram</a>
+            </div>
+            <div class="contact-meta">@novadigitalsupport</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p style="margin:0;">
+        © <span id="year"></span> NovaDigital — Modern responsive landing page for selling digital products.
+      </p>
+    </div>
+  </footer>
+
+  <div class="sticky-buy">
+    <div class="sticky-inner">
+      <div class="sticky-copy">
+        <strong>Ultimate Digital Growth Kit</strong>
+        <span>Limited offer: &#36;29 • Instant digital delivery</span>
+      </div>
+      <a href="#order" class="btn btn-primary buy-scroll" data-product="Ultimate Digital Growth Kit">Buy Now</a>
+    </div>
+  </div>
+
+  <a
+    class="floating-chat"
+    href="https://wa.me/12345678900?text=Hello%20I%20need%20help%20with%20the%20digital%20product"
+    target="_blank"
+    rel="noopener"
+    aria-label="Open WhatsApp chat"
+    title="Chat on WhatsApp"
+  >💬</a>
+
+  <script>
+    const body = document.body;
+    const header = document.querySelector(".site-header");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const themeToggle = document.getElementById("themeToggle");
+    const orderForm = document.getElementById("orderForm");
+    const successMessage = document.getElementById("successMessage");
+    const fileInput = document.getElementById("paymentScreenshot");
+    const fileName = document.getElementById("fileName");
+    const productNameInput = document.getElementById("productName");
+    const buyButtons = document.querySelectorAll(".buy-scroll");
+    const orderSection = document.getElementById("order");
+    const year = document.getElementById("year");
+
+    year.textContent = new Date().getFullYear();
+
+    function closeMenu() {
+      header.classList.remove("menu-open");
+      body.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = '☰<span class="sr-only">Toggle menu</span>';
+    }
+
+    function openMenu() {
+      header.classList.add("menu-open");
+      body.classList.add("menu-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.innerHTML = '✕<span class="sr-only">Close menu</span>';
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = header.classList.contains("menu-open");
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!header.contains(e.target) && header.classList.contains("menu-open")) {
+        closeMenu();
+      }
+    });
+
+    themeToggle.addEventListener("click", () => {
+      const dark = body.getAttribute("data-theme") === "dark";
+      body.setAttribute("data-theme", dark ? "light" : "dark");
+      themeToggle.textContent = dark ? "☀️" : "🌙";
+      themeToggle.setAttribute("aria-label", dark ? "Switch to dark theme" : "Switch to light theme");
+    });
+
+    buyButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const product = btn.dataset.product || "Ultimate Digital Growth Kit";
+        productNameInput.value = product;
+
+        setTimeout(() => {
+          orderSection.style.scrollMarginTop = "96px";
+          const firstField = document.getElementById("fullName");
+          if (firstField) firstField.focus({ preventScroll: true });
+        }, 180);
+      });
+    });
+
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files && fileInput.files[0]) {
+        fileName.textContent = fileInput.files[0].name;
+      } else {
+        fileName.textContent = "PNG, JPG, WEBP or PDF supported";
+      }
+    });
+
+    orderForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const requiredFields = orderForm.querySelectorAll("[required]");
+      let valid = true;
+
+      requiredFields.forEach(field => {
+        if (!field.value || (field.type === "file" && (!field.files || !field.files.length))) {
+          valid = false;
+          field.closest(".question")?.scrollIntoView({ behavior: "smooth", block: "center" });
+          field.focus();
+        }
+      });
+
+      if (!valid) return;
+
+      successMessage.classList.add("show");
+      successMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+      orderForm.reset();
+      productNameInput.value = "Ultimate Digital Growth Kit";
+      fileName.textContent = "PNG, JPG, WEBP or PDF supported";
+    });
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("in-view");
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
